@@ -15,10 +15,16 @@ Before being able to use this, please state "mode" inside of the script file. (a
 
 ### Example configuration (PRTG)
 
+Place script file under PRTGs custom python sensor directory (default: C:\Program Files (x86)\PRTG Network Monitor\Custom Sensors\python )
+Create a new "Custom Advanced Python Sensor"
+
+
+Configure the sensor according your needs:
 
 
 ### Example configuration (Centreon)
 
+Place the script under Monitoring Systems plugin folder (centreon default /usr/lib/centreon/plugins/) and configure a new check, using the script.
 # Notice
 This is also posted at Check Points Checkmates Community Toolbox
 Please tell questions about it there
