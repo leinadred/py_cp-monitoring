@@ -30,7 +30,10 @@ Create a new "Custom Advanced Python Sensor"
 
 Configure the sensor according your needs:
 
-![exe sensor - create](prtg_configure.png)
+![exe sensor - config](prtg_configure.png)
+
+Result:
+![exe sensor - result](prtg_result.png)
 
 According to help:
 ```
