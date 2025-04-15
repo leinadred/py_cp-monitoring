@@ -14,6 +14,7 @@ if not mode == 'prtg' and not mode == 'nagios':
 
 
 import logging
+import ipaddress
 import argparse
 from datetime import datetime
 import base64
@@ -30,8 +31,8 @@ now = datetime.now()
 ##################################################################################################
 # setting default values - overridden, when given by call
 # api_server  = ""
-# api_port    = ""
-# api_user    = "" # None
+# api_port    = "443"
+# api_user    = "admin" #None
 # api_pwd     = ""
 # api_context = None #""
 # monitoring  = "" # either ica,emmclifetime,ips,licensing
@@ -285,18 +286,25 @@ def fun_resips(ips_state):
                 "status": "ok",
                 "message": f"No IPS update found - last updated {hours_from_update} hours ago (version: {ips_state['installed-version']}).",
                 }
-        elif  ips_state["update-available"] == True and days_from_update > val_warning:
+        elif ips_state["update-available"] == True and days_from_update > val_warning:
             final = {
                 "version": 2,
                 "status": "warning",
                 "message": f"No IPS update found - last updated {hours_from_update} hours ago",
             }
-        elif  ips_state["update-available"] == True and hours_from_update > val_error:
+        elif ips_state["update-available"] == True and days_from_update > val_error:
             final = {
                 "version": 2,
                 "status": "error",
                 "message": f"No IPS update found - last updated {hours_from_update} hours ago",
             }
+        elif ips_state["update-available"] == True and days_from_update < val_warning:
+            final = {
+                "version": 2,
+                "status": "ok",
+                "message": f"IPS update found - last updated {hours_from_update} hours ago (installed version: {ips_state['installed-version']} vs. latest version:{ips_state['latest-version']}).",
+                }
+
         else:
             final = {
                 "version": 2,
