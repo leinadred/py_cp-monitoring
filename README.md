@@ -34,9 +34,9 @@ Configure the sensor according your needs:
 
 According to help:
 ```
-PS C:\Programs\PRTG\Custom Sensors\scripts> py .\00_py_cpica.py -h
+PS C:\Programs\PRTG\Custom Sensors\scripts> py .\py_cp-monitoring.py -h
 Terminal detected
-usage: 00_py_cpica.py [-h] --host HOST [--user USER] --pwd PWD [--port PORT] [--context CONTEXT] [--monitoring {ica,emmclifetime,ips,licensing}] [--warning WARNING]
+usage: py_cp-monitoring.py [-h] --host HOST [--user USER] --pwd PWD [--port PORT] [--context CONTEXT] [--monitoring {ica,emmclifetime,ips,licensing}] [--warning WARNING]
                       [--error ERROR] [--timeout TIMEOUT]
 
 options:
