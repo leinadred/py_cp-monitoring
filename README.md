@@ -1,5 +1,5 @@
 # py_cp-monitoring
-Script for monitoring aspects of Check Point installation
+Script for monitoring aspects of Check Point installation // Still in development!
 
 ## monitoring = "ica" 
 
